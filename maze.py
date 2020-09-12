@@ -9,8 +9,6 @@ import sys
 #
 # Author :  David Castellanos-Bentio
 ***************************************** '''
-
-
 def startGame():
     # Gives the start coordinates of the user
     startX = 2
@@ -41,8 +39,6 @@ def startGame():
 #
 # Author : David Castellanos-Benito
 ***************************************** '''
-
-
 def printMainMap(xpos, ypos):
     # dash is the path
     dash = "-"
@@ -108,8 +104,6 @@ def printMainMap(xpos, ypos):
 #
 # Author : David Castellanos-Benito
 ***************************************** '''
-
-
 def printUpdatedMap(xpos, ypos):
 
     walls = [
@@ -577,8 +571,6 @@ def printUpdatedMap(xpos, ypos):
 #
 # Author: David Castellanos-Benito
 ***************************************** '''
-
-
 def moveUp(x, y):
     # subtracts 1 from y to move up
     y -= 1
@@ -607,8 +599,6 @@ def moveUp(x, y):
 #
 # Author: David Castellanos-Benito
 ***************************************** '''
-
-
 def moveDown(x, y):
     # adds 1 to y to move down
     y += 1
@@ -637,8 +627,6 @@ def moveDown(x, y):
 #
 # Author: David Castellanos-Benito
 ***************************************** '''
-
-
 def moveR(x, y):
     # adds 1 to x to move right
     x += 1
@@ -669,8 +657,6 @@ def moveR(x, y):
 #
 # Author: David Castellanos-Benito
 ***************************************** '''
-
-
 def moveL(x, y):
     # subtracts 1 from x to move right
     x -= 1
@@ -702,12 +688,10 @@ def moveL(x, y):
 #
 # Author: David Castellanos-Benito
 ***************************************** '''
-
-
 def moveSystem(x, y):
     # The player will be prompted with this question everytime after a move
     moveUser = input(
-        "Please type an input to move\n( A || W || S || D )\nWould you like to see an updated map? Type: \n(map)\n")
+        "Please type an input to move\n( A || W || S || D )\nWould you like to see an updated map? Type: \n(map)\nWould you like to Exit? Type : \n(exit)\n")
     # Make the input of the user lower case to handle both Upper and lower case
     moveUser = moveUser.lower()
     # If the user types "a"
@@ -728,6 +712,9 @@ def moveSystem(x, y):
         x = moveR(x, y)
     if moveUser == "map":
         x, y = printUpdatedMap(x, y)
+    # If the player wants to exit the game
+    if moveUser == 'exit':
+        sys.exit()
     return x, y
 
 
@@ -743,8 +730,6 @@ def moveSystem(x, y):
 #
 # Author: David Castellanos-Benito
 ***************************************** '''
-
-
 def playGame(x, y):
     string = ""
     # The finish line for the player to win
@@ -780,8 +765,6 @@ def playGame(x, y):
 #
 # Author: David Castellanos-Benito
 ***************************************** '''
-
-
 def blocks(x, y):
     # Set the state to False
     state = False
